@@ -1,0 +1,4 @@
+---
+# handlers file for graylog-collector
+- name: restart_graylog
+  service: name=collector-sidecar state=restarted

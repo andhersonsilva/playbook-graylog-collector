@@ -1,0 +1,39 @@
+- name: Download Graylog Package
+  get_url: url={{ graylog_package_url }} dest={{ graylog_package_dest }}
+  when: graylog_download_package == "yes"
+  tags:
+   - graylog 
+
+- name: Copy Graylog Package
+  copy: src=//srv/files/collector-sidecar-0.1.0-1.x86_64.rpm dest={{graylog_package_local}}
+  when: graylog_download_package == "no"
+  tags:
+   - graylog
+        
+- name: Install Graylog Package
+  yum:  name="{{graylog_package_local}}" state=present
+  tags:
+   - graylog
+
+- name: Check if Graylog Service Exists
+  stat: path=/etc/systemd/system/collector-sidecar.service
+  register: service_status
+  tags:
+   - graylog
+
+- name: Install graylog sidecar service
+  command: "graylog-collector-sidecar -service install"
+  when: service_status.stat.exists == False
+  tags: 
+   - graylog
+
+- name: Copy graylog config 
+  template: src=collector_sidecar.j2 dest=/etc/graylog/collector-sidecar/collector_sidecar.yml
+  notify: restart_graylog
+  tags:
+   - graylog
+
+- name: Start Service
+  service: name=collector-sidecar state=started enabled=yes
+  tags:
+   - graylog
