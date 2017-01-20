@@ -10,7 +10,9 @@ log_path: /var/log/graylog/collector-sidecar
 log_rotation_time: 86400
 log_max_age: 604800
 tags:
-  - linux 
+{% for v in graylog_tags %}
+        {{ v }};
+{% endfor %}
 backends:
     - name: nxlog
       enabled: false
