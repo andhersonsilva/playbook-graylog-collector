@@ -11,7 +11,7 @@ log_rotation_time: 86400
 log_max_age: 604800
 tags:
 {% for v in graylog_tags %}
-       - {{ v }}
+    - {{ v }}
 {% endfor %}
 backends:
     - name: nxlog
