@@ -1,16 +1,19 @@
 ---
 # defaults file for graylog-collector
-graylog_server: 172.18.11.45 
+graylog_server: 127.0.0.1
 
 graylog_tags:
    - linux
 
-graylog_package_url: https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0-beta.2
+graylog_package_url: https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0-beta.3/collector-sidecar-0.1.0-1.i386.rpm
 
 graylog_package_name: collector-sidecar-0.1.0-1.x86_64.rpm
 
-graylog_package_dest: /usr/local/src
+graylog_package_folder: /usr/local/src
 
-graylog_package_local: "{{graylog_package_dest}}/{{graylog_package_name}}"
+graylog_package_dest: "{{graylog_package_folder}}/{{graylog_package_name}}"
+
+graylog_package_source_folder:  
 
 graylog_download_package: "no" 
+
