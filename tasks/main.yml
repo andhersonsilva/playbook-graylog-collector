@@ -1,5 +1,10 @@
+- name: Check OS
+  set_fact: graylog_package_name: "{{graylog_package_redhat}}"
+  when: ansible_os_family == "RedHat"
+
 - include: install-redhat.yml
   tags: graylog 
+  when: ansible_os_family == "RedHat"
 
 - name: Check if Graylog Service Exists
   stat: path=/etc/systemd/system/collector-sidecar.service

@@ -4,7 +4,7 @@
 
 
 - name: Copy Graylog Package
-  copy: src=//srv/files/collector-sidecar-0.1.0-1.x86_64.rpm dest={{graylog_package_dest}}
+  copy: src=/srv/files/{{graylog_package_name}} dest={{graylog_package_dest}}
   when: graylog_download_package == "no"
 
         
