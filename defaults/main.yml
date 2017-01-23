@@ -19,3 +19,6 @@ graylog_package_source:  "{{graylog_package_source_folder}}/{{graylog_package_na
 
 graylog_download_package: "no" 
 
+graylog_nxlog: "false"
+
+graylog_filebeat: "true"  

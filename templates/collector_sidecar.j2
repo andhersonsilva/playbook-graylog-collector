@@ -15,10 +15,10 @@ tags:
 {% endfor %}
 backends:
     - name: nxlog
-      enabled: false
+      enabled: {{graylog_nxlog}}
       binary_path: /usr/bin/nxlog
       configuration_path: /etc/graylog/collector-sidecar/generated/nxlog.conf
     - name: filebeat
-      enabled: true
+      enabled: {{graylog_filebeat}}
       binary_path: /usr/bin/filebeat
       configuration_path: /etc/graylog/collector-sidecar/generated/filebeat.yml
