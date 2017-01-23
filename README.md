@@ -13,8 +13,12 @@ Requirements
 Role Variables
 --------------
 
+```yaml
+
 ## Set up your graylog server
 graylog_server: 127.0.0.1
+
+```
 
 Dependencies
 ------------
