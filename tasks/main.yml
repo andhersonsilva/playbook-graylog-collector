@@ -1,5 +1,6 @@
 - name: Check OS
-  set_fact: graylog_package_name: "{{graylog_package_redhat}}"
+  set_fact: 
+    graylog_package_name: "{{graylog_package_redhat}}"
   when: ansible_os_family == "RedHat"
 
 - include: install-redhat.yml
