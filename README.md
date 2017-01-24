@@ -27,7 +27,7 @@ graylog_download_package: "no"
 graylog_package_name: collector-sidecar_0.1.0-1_amd64.deb
 graylog_package_url: https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0-beta.3/{{graylog_package_name}}
 
-## Source folder on the ansible server where the package are in 
+## Source folder on the ansible server where the package are in , you need to copy package to that folder if you set graylog_download_package as "no"
 graylog_package_source_folder:  /srv/files/
 
 ## Destination folder on the target host to the package

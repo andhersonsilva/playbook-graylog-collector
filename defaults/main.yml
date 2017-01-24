@@ -13,7 +13,7 @@ graylog_package_source_folder:  /srv/files/
 
 graylog_package_source:  "{{graylog_package_source_folder}}/{{graylog_package_name}}"
 
-graylog_download_package: "no" 
+graylog_download_package: "yes" 
 
 graylog_nxlog: "false"
 
