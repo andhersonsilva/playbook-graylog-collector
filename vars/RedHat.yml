@@ -1,3 +1,5 @@
 ---
 # vars file for graylog-collector
 graylog_package_url: https://github.com/Graylog2/collector-sidecar/releases/download/0.1.0-beta.3/collector-sidecar-0.1.0-1.i386.rpm
+
+graylog_package_name: collector-sidecar-0.1.0-1.x86_64.rpm

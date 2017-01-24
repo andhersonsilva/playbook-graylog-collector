@@ -1,7 +1,3 @@
-- name: Set package name
-  set_fact: 
-    graylog_package_name: "{{graylog_package_redhat}}"
-
 - name: Download Graylog Package
   get_url: url={{ graylog_package_url }} dest={{ graylog_package_folder }}
   when: graylog_download_package == "yes"
