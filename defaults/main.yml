@@ -4,8 +4,6 @@ graylog_server: graylog
 
 graylog_tags:
    - linux
-   
-graylog_package_redhat: collector-sidecar-0.1.0-1.x86_64.rpm
 
 graylog_package_folder: /usr/local/src
 
