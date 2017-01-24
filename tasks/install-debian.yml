@@ -1,0 +1,16 @@
+- name: Set package name
+  set_fact: 
+    graylog_package_name: "{{graylog_package_debian}}"
+
+- name: Download Graylog Package
+  get_url: url={{ graylog_package_url }} dest={{ graylog_package_folder }}
+  when: graylog_download_package == "yes"
+
+
+- name: Copy Graylog Package
+  copy: src=/srv/files/{{graylog_package_name}} dest={{graylog_package_dest}}
+  when: graylog_download_package == "no"
+
+        
+- name: Install Graylog Package
+  yum:  name="{{graylog_package_dest}}" state=present
