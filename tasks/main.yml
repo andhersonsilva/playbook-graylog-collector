@@ -5,6 +5,11 @@
 - include: install-redhat.yml
   tags: graylog 
   when: ansible_os_family == "RedHat"
+  
+- include: install-debian.yml
+  tags: graylog 
+  when: ansible_os_family == "Debian"
+
 
 - name: Check if Graylog Service Exists
   stat: path=/etc/systemd/system/collector-sidecar.service
